@@ -1,0 +1,20 @@
+{% extends 'base.jinja2' %}
+
+{% block content %}
+    <article>
+        <div>
+            <a href="/" class="d-flex align-items-center">
+                <span>Return to home</span>
+            </a>
+        </div>
+        <header class="mb-4">
+            <h1 style="font-size: 30px; letter-spacing: 0.25px;" class="fw-bold">{{ Title }}</h1>
+            <time datetime="{{ DatePublished }}"><span class="text-muted font-monospace">{{ DatePublished.strftime('%B %-d, %Y')  }}</span></time>
+        </header>
+        <div style="max-width: 800px; line-height: 1.75;">
+            <p>
+                {{ PostMarkup|safe }}
+            </p>
+        </div>
+    </article>
+{% endblock content %}

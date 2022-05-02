@@ -1,0 +1,14 @@
+{% extends 'base.jinja2' %}
+
+{% block content %}
+    <section>
+        {% for post in posts %}
+            <article class="mb-3">
+                <header>
+                    <a href="{{ post.Url }}" class="listing-a">{{ post.Title }}</a>&nbsp;&nbsp;
+                    <time datetime="{{ post.DatePublished }}"><small class="text-muted font-monospace">({{ post.DatePublished.strftime('%B %-d, %Y')  }})</small></time>
+                </header>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock content %}
